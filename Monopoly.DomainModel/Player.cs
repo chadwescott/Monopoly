@@ -50,6 +50,11 @@ namespace Monopoly.DomainModel
             return _dice.All(d => d.GetFaceValue() == faceValue);
         }
 
+        public void SetLocation(Square location)
+        {
+            _location = location;
+        }
+
         public Square GetLocation()
         {
             return _location;

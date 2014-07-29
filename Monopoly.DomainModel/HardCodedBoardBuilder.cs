@@ -2,16 +2,24 @@
 
 namespace Monopoly.DomainModel
 {
-    internal class HardCodedBoardBuilder : IBoardBuilder
+    public class HardCodedBoardBuilder : IBoardBuilder
     {
+        private static Square[] _squares;
+        private const int NumberOfSquares = 40;
+
         public int BoardSize
         {
-            get { return 40; }
+            get { return NumberOfSquares; }
         }
 
         public Square[] BuildSquares()
         {
-            var squares = new Square[BoardSize];
+            return _squares ?? (_squares = InitializeSquares());
+        }
+
+        private static Square[] InitializeSquares()
+        {
+            var squares = new Square[NumberOfSquares];
 
             var railroadGroup = new PropertyGroup();
             var utilityGroup = new PropertyGroup();

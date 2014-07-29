@@ -8,6 +8,7 @@ namespace Monopoly.DomainModel.Test.Helpers
         public static IBoardBuilder GetBoardBuilder()
         {
             var boardBuilder = MockRepository.GenerateStub<IBoardBuilder>();
+            boardBuilder.Stub(s => s.BoardSize).Return(40);
             boardBuilder.Stub(s => s.BuildSquares()).Return(BuildSquares());
             return boardBuilder;
         }
