@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Monopoly.DomainModel.Squares;
+using Monopoly.DomainModel.Test.Helpers;
 using Rhino.Mocks;
 
 namespace Monopoly.DomainModel.Test.Squares
@@ -23,7 +23,7 @@ namespace Monopoly.DomainModel.Test.Squares
             var die = MockRepository.GenerateStub<IDie>();
             die.Stub(s => s.GetFaceValue()).Return(1);
             var dice = new[] { die, die };
-            var board = MockRepository.GenerateStub<Board>();
+            var board = BoardHelper.GetBoard();
             _roller = new Player("Roller", dice, board);
             _roller.AddCash(2000);
             _owner = new Player("Owner", dice, board);

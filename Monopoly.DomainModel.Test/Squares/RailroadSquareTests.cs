@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Monopoly.DomainModel.Squares;
-using Rhino.Mocks;
+using Monopoly.DomainModel.Test.Helpers;
 
 namespace Monopoly.DomainModel.Test.Squares
 {
@@ -24,7 +24,7 @@ namespace Monopoly.DomainModel.Test.Squares
             _short = new RailroadSquare("Short Line Railroad", 3, group, 200);
 
             var dice = new[] { new Die(), new Die() };
-            var board = MockRepository.GenerateStub<Board>();
+            var board = BoardHelper.GetBoard();
             _roller = new Player("Roller", dice, board);
             _roller.AddCash(2000);
             _owner = new Player("Owner", dice, board);

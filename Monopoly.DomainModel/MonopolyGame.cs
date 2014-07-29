@@ -8,7 +8,7 @@ namespace Monopoly.DomainModel
         private const int RoundsTotal = 20;
         private const int PlayersTotal = 2;
         private readonly IList _players = new ArrayList(PlayersTotal);
-        private readonly Board _board = new Board();
+        private readonly Board _board = new Board(new HardCodedBoardBuilder());
         private readonly IDie[] _dice = { new Die(), new Die() };
 
         public MonopolyGame()

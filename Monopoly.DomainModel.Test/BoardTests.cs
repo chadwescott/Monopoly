@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monopoly.DomainModel.Test.Helpers;
 
 namespace Monopoly.DomainModel.Test
 {
@@ -9,7 +10,7 @@ namespace Monopoly.DomainModel.Test
         [TestMethod]
         public void GetSquareTest()
         {
-            var fixture = new Board();
+            var fixture = BoardHelper.GetBoard();
             var startSquare = fixture.GetStartSquare();
             var squares = new ArrayList(40);
             squares.Add(startSquare);

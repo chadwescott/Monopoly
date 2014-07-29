@@ -1,22 +1,23 @@
 ﻿using System.Collections;
-using Monopoly.DomainModel.Squares;
 
 namespace Monopoly.DomainModel
 {
     public class Board
     {
-        private const int Size = 40;
-        private readonly ArrayList _squares = new ArrayList(Size);
+        private readonly int _size;
+        private readonly ArrayList _squares;
 
-        public Board()
+        public Board(IBoardBuilder builder)
         {
-            BuildSquares();
+            _size = builder.BoardSize;
+            _squares = new ArrayList(_size);
+            BuildSquares(builder);
             LinkSquares();
         }
 
         public Square GetSquare(Square start, int distance)
         {
-            var endIndex = (start.GetIndex() + distance) % Size;
+            var endIndex = (start.GetIndex() + distance) % _size;
             return (Square) _squares[endIndex];
         }
 
@@ -25,24 +26,17 @@ namespace Monopoly.DomainModel
             return (Square) _squares[0];
         }
 
-        private void BuildSquares()
+        private void BuildSquares(IBoardBuilder builder)
         {
-            for (var i = 1; i <= Size; i++)
-                Build(i);
-        }
-
-        private void Build(int i)
-        {
-            var s = new RegularSquare("Square " + i, i - 1);
-            _squares.Add(s);
+            _squares.AddRange(builder.BuildSquares());
         }
 
         private void LinkSquares()
         {
-            for (var i = 0; i < (Size - 1); i++)
+            for (var i = 0; i < (_size - 1); i++)
                 Link(i);
             var first = GetStartSquare();
-            var last = (Square) _squares[Size - 1];
+            var last = (Square) _squares[_size - 1];
             last.SetNextSquare(first);
         }
 
