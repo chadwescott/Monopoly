@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{30E3B81D-86BF-4482-AA83-00B655A3B688}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\Rhino.Mocks.dll = Libs\Rhino.Mocks.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monopoly", "Monopoly\Monopoly.csproj", "{553D0E65-E730-4EE1-9AC0-9CE28686BAF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{65E0447A-7014-43DD-91B7-B3E854720536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monopoly.UnitTests", "Monopoly.UnitTests\Monopoly.UnitTests.csproj", "{D4C6D5F0-D321-4786-9319-EE7802D265E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monopoly.FunctionalTests", "Monopoly.FunctionalTests\Monopoly.FunctionalTests.csproj", "{0A952387-EDD6-42C0-A40E-01932B53DC7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{553D0E65-E730-4EE1-9AC0-9CE28686BAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{553D0E65-E730-4EE1-9AC0-9CE28686BAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{553D0E65-E730-4EE1-9AC0-9CE28686BAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{553D0E65-E730-4EE1-9AC0-9CE28686BAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C6D5F0-D321-4786-9319-EE7802D265E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C6D5F0-D321-4786-9319-EE7802D265E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C6D5F0-D321-4786-9319-EE7802D265E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C6D5F0-D321-4786-9319-EE7802D265E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A952387-EDD6-42C0-A40E-01932B53DC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A952387-EDD6-42C0-A40E-01932B53DC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A952387-EDD6-42C0-A40E-01932B53DC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A952387-EDD6-42C0-A40E-01932B53DC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4C6D5F0-D321-4786-9319-EE7802D265E4} = {65E0447A-7014-43DD-91B7-B3E854720536}
+		{0A952387-EDD6-42C0-A40E-01932B53DC7D} = {65E0447A-7014-43DD-91B7-B3E854720536}
+	EndGlobalSection
+EndGlobal
