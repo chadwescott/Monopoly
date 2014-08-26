@@ -53,10 +53,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Actions\GiveToAllPlayersTest.cs" />
+    <Compile Include="Actions\MoveToSquareTest.cs" />
+    <Compile Include="Actions\PayFeeTest.cs" />
     <Compile Include="BoardTests.cs" />
     <Compile Include="DieTests.cs" />
     <Compile Include="Helpers\BoardBuilderHelper.cs" />
     <Compile Include="Helpers\BoardHelper.cs" />
+    <Compile Include="Helpers\PlayerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Squares\BuildableSquareTests.cs" />
     <Compile Include="Squares\GoSquareTests.cs" />

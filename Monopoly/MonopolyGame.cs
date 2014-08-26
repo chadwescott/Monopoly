@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace Monopoly
 {
     public class MonopolyGame
     {
         private const int RoundsTotal = 20;
-        private const int PlayersTotal = 2;
-        private readonly IList _players = new ArrayList(PlayersTotal);
-        private readonly Board _board = new Board(new HardCodedBoardBuilder());
+        private readonly IList<Player> _players = new List<Player>();
+        private readonly Board _board;
         private readonly IDie[] _dice = { new Die(), new Die() };
 
-        public MonopolyGame()
+        public MonopolyGame(IBoardBuilder builder)
         {
-            _players.Add(new Player("Horse", _dice, _board));
-            _players.Add(new Player("Car", _dice, _board));
+            _board = new Board(builder);
+        }
+
+        public void AddPlayer(string name)
+        {
+            _players.Add(new Player(name, _dice, _board));
         }
 
         public void PlayGame()
@@ -23,14 +25,14 @@ namespace Monopoly
                 PlayRound();
         }
 
-        public IList GetPlayers()
+        public IList<Player> GetPlayers()
         {
             return _players;
         }
 
         private void PlayRound()
         {
-            foreach (var player in _players.Cast<Player>())
+            foreach (var player in _players)
                 player.TakeTurn();
         }
     }
